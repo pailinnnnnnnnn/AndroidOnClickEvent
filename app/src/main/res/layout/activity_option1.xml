@@ -44,4 +44,35 @@
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_back_option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="left"
+            android:onClick="process"
+            />
+
+        <Button
+            android:id="@+id/btn_next_option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="right"
+            android:onClick="process"
+            />
+    </FrameLayout>
+
+
+
 </LinearLayout>

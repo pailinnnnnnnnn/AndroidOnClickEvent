@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,10 @@ public class Option0Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option0);
         bindView();
+        initInstance();
+    }
+
+    private void initInstance() {
     }
 
     // To bind views to this activity
@@ -33,9 +38,17 @@ public class Option0Activity extends AppCompatActivity {
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
     public void process(View v) {
         // Do we really need to compare view objects?
-        if (v == btnProcess) {
-            greet();
+
+        switch (v.getId()) {
+            case R.id.btn_next_option0:
+                Intent intent = new Intent(Option0Activity.this,Option1Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_back_option0:
+                finish();
+                break;
         }
+
         hideKeyboardInput(v);
     }
 

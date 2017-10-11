@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,13 +35,24 @@ public class Option2Activity extends AppCompatActivity {
     // You don't have to bind any function to "android:onClick" in layout XML file.
     // However, this will cause adding too many instructions to activity's "onCreate" method.
     private void initView(){
-        findViewById(R.id.btn_process_2).setOnClickListener(new View.OnClickListener() {
+
+        findViewById(R.id.btn_next_option2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                greet();
+                Intent intent = new Intent(Option2Activity.this,Option3Activity.class);
+                startActivity(intent);
                 hideKeyboardInput(v);
             }
         });
+        findViewById(R.id.btn_back_option2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                hideKeyboardInput(v);
+            }
+        });
+
+
     }
 
     // To greet the user

@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,8 +29,12 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_process_3:
-                greet();
+            case R.id.btn_next_option3:
+                Intent intent = new Intent(Option3Activity.this,Option4Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_back_option3:
+                finish();
                 break;
         }
         hideKeyboardInput(v);
@@ -43,7 +48,8 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
 
     private void initView(){
         // To register click event to view
-        findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_back_option3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_next_option3).setOnClickListener(this);
     }
 
     // To greet the user
